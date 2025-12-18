@@ -19,7 +19,7 @@ export default function ActivityScreen() {
   const [modalVisible, setModalVisible] = useState(false);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
+  const [selectedDate, setSelectedDate] = useState(new Date().toLocaleDateString('sv-SE'));
 
   useFocusEffect(
     useCallback(() => {
@@ -93,8 +93,8 @@ export default function ActivityScreen() {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString + 'T00:00:00');
-    const today = new Date().toISOString().split('T')[0];
-    const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+    const today = new Date().toLocaleDateString('sv-SE');
+    const yesterday = new Date(Date.now() - 86400000).toLocaleDateString('sv-SE');
 
     if (dateString === today) return 'Hari Ini';
     if (dateString === yesterday) return 'Kemarin';

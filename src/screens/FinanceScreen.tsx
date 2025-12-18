@@ -51,7 +51,7 @@ export default function FinanceScreen() {
       amount: parseFloat(amount),
       category,
       description,
-      date: new Date().toISOString().split('T')[0],
+      date: new Date().toLocaleDateString('sv-SE'),
     };
 
     const updatedTransactions = [newTransaction, ...transactions];
