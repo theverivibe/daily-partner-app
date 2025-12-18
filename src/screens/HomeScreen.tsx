@@ -47,7 +47,7 @@ export default function HomeScreen() {
   };
 
   const todayActivities = activities.filter(
-    (a) => a.date === new Date().toISOString().split('T')[0]
+    (a) => a.date === new Date().toLocaleDateString('sv-SE')
   );
 
   const pendingTodos = todos.filter((t) => !t.completed);
